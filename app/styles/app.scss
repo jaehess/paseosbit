@@ -1,0 +1,72 @@
+@import "settings";
+
+@import "foundation";
+
+.cool-project-header {
+  margin: 0 0 0 20px;
+}
+
+.copy {
+  font-size: 0.6em;
+}
+
+.schedule.panel {
+  margin-top: 1em;
+}
+
+.item-wrapper {
+  padding: 20px;
+  border: 2px solid #efefef;
+  border-radius: 7px;
+  margin-top: 20px;
+
+  &:hover {
+    .img-wrapper {
+      //img { -webkit-filter: grayscale(0); }
+
+      .view-project { bottom: 0; }
+    }
+  }
+}
+
+.img-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+
+  .view-project {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: #333;
+    padding: 16px 8px;
+    bottom: -50px;
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+
+    &:hover { background-color: $primary-color; }
+  }
+
+  img {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    //-webkit-filter: grayscale(1);
+    width: 100%;
+  }
+}
+
+h3 { font-size: 16px; }
+h4 { color: $primary-color; }
+h5 { font-weight: bold; }
+
+p {
+  color: #555;
+  font-weight: 100;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+dd { font-size: 0.9em; margin-left: 4px;}

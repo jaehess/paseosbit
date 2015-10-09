@@ -1,3 +1,112 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
 
-{{outlet}}
+    <li class="name">
+      <h1>
+        <a href="/">
+          Los Paseos littleBits Club
+        </a>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <ul class="right">
+      <li class="divider"></li>
+      <li>
+        <a href="http://littlebits.cc">littleBits</a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="http://lospaseos.mhusd.org">Los Paseos</a>
+      </li>
+    </ul>
+  </section>
+  </nav>
+
+  <div class="row">
+    <br>
+    <div class="large-7 columns">
+      <div class="flex-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wDa3dOERxvA" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="large-5 columns">
+      <h4>Los Paseos littleBits Club</h4>
+      <p>The Los Paseos littleBits Club is an after school club at Los Paseos Elementary School that will be teaching <strong>invention</strong>, <strong>electronics</strong>, <strong>circuitry</strong>, <strong>engineering</strong>, and <strong>design</strong> through the use of littleBits.</p>
+      <p>Classes are held twice a month at Los Paseos Elementary School.</p>
+
+      <div class="schedule panel">
+        <h5>Upcoming Classes</h5>
+        {{#each model.events as |event|}}
+          <h6 class="subheader">{{moment-format event.date 'dddd MMMM Do'}}, {{event.time}}</h6>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <hr/>
+    <div class="large-6 columns">
+      <h4>Invent Anything</h4>
+      <p>Students will learn skills to allow them to create a drawing robot, hack their backpacks, create a light based alarm, enhance your Lego creations to respond to sounds, and so much more!</p>
+    </div>
+    <div class="large-6 columns">
+      <h4>Monthly Challenges</h4>
+      <p>Each month students will design and build solutions to global monthly challenges using littleBits and their imagination. Winners of these challenges will be chosen from across the globe each month.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <hr>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h4 class="cool-project-header">Cool Projects</h4>
+      </div>
+      {{#each model.projects as |project|}}
+      <div class="large-4 columns">
+        <div class="item-wrapper">
+          <div class="img-wrapper">
+            <a class="button expand view-project hide-for-small">View Project</a>
+            <a href="{{project.detailUrl}}">
+              <img src="{{project.previewImage}}">
+            </a>
+          </div>
+          <a href="{{project.detailUrl}}">
+            <h3>{{project.name}}</h3>
+          </a>
+          <p>{{project.description}}</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="row">
+    <hr/>
+    <div class="large-12 columns">
+      <h4>About the instructor</h4>
+      <p>During the day, Jae is a software engineer trying to change education through the use of technology. In his spare time, he can be found working on various hardware and software projects with his 3 kids. He is always on the lookout for ways to help spark innovation and creation for them and their friends.</p>
+    </div>
+  </div>
+
+  <footer class="row">
+  <div class="large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="large-6 columns">
+        <p class="copy">littleBits, littleBits logo, Bits, "Make Something That Does Something," bitLab, cloudBit, and "Snap The Internet To Anything" are trademarks of littleBits Electronics, Inc.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="http://lospaseos.mhusd.org">Los Paseos Elementary</a></li>
+          <li><a href="http://littlebits.cc">littleBits</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </footer>
